@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            //Đếm xem có bao nhiêu
+            // alert($('div div a').length)
+            // $('table').css('backgroundColor','green');
+            //even : chẵn
+            // $('table tr:even').css('backgroundColor','blue');
+            //odd : lẻ
+            // $('table tr:odd').css('backgroundColor','green');
+            //In ra thẻ html
+            // alert($('#table1 tr').html());
+            //In ra text
+            // alert($('#table1 tr').text());
+            //Vòng lặp như foreach
+            // ($('#table1 tr').each(function () {
+            //     alert($(this).html());
+            // }));
+            //Điều kiện lặp - tìm kiếm td đầu có nội dung là Test
+            // $('#table1 tr').each(function () {
+            //     if ($(this).find('td:first').text() == 'Test')
+            //         alert($(this).html());
+            // })
+            //Lấy ra phần tử cuối cùng
+            alert($('#table1 tr:last').html());
+
+        });
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <table id="table1" class="table table-bordered">
+        <tr>
+            <td>Test</td>
+            <td>Đức</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>Đinh Văn</td>
+            <td>Ninh</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>Đinh Văn</td>
+            <td>Khánh</td>
+            <td>21</td>
+        </tr>
+    </table>
+
+    <table id="table2" class="table table-bordered">
+        <tr>
+            <td>Đinh Văn</td>
+            <td>Đức</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>Đinh Văn</td>
+            <td>Ninh</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>Đinh Văn</td>
+            <td>Khánh</td>
+            <td>21</td>
+        </tr>
+    </table>
+    <div>
+        <a href="">Div a</a>
+    </div>
+    <a href="">Thẻ a</a>
+</div>
+</body>
+</html>

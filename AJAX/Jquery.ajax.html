@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <title>AJAX</title>
+    <script src="../jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            // $.ajax({
+            //     url: "link", //Địa chỉ gọi trong ajax
+            //     method: 'Get or Post', //Kiểu gọi Get - Post ( Mặc định là GET)
+            //     data: {
+            //         name1: value1,
+            //         name2: value2
+            //     },
+            //     success: function(result,status,xhr){
+            //         //CODE
+            //     },
+            //     error: function (xhr,status,error) {
+            //         //CODE
+            //     }
+            // });
+
+            $('#btn').click(function () {
+                $.ajax({
+                    url: "data/ajax1.html",
+                    success: function(data1){
+                        $('#result').html(data1);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="contaner">
+    <input type="button" id="btn" value="Click">
+    <div id="result" class="text-danger"></div>
+</div>
+</body>
+</html>

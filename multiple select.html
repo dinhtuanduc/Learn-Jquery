@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btnSubmit').click(function () {
+                var selected = $('#courses option:selected');
+                var result = '';
+                if (selected.length > 0){
+                    selected.each(function () {
+                        result += '- Value: '+ $(this).val() + '- Text: ' + $(this).text() + '<br>';
+                        $('#result').html(result);
+                    });
+                }else{
+                    $('#result').html('Not found');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <select name="courses" id="courses" multiple>
+        <option value="">Choose language</option>
+        <option value="1">C</option>
+        <option value="2">C++</option>
+        <option value="3">Python</option>
+        <option value="4">HTML + CSS</option>
+        <option value="5">Javascript</option>
+        <option value="6">PHP</option>
+    </select>
+    <br>
+    <input type="button" id="btnSubmit" value="Submit">
+    <div id="result"></div>
+</div>
+</body>
+</html>

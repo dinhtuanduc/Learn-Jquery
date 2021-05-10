@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        //Thêm mới một phần tử vào trước hoặc sau một phần tử khác
+        $(document).ready(function () {
+            $('div div').before('Course:');
+            $('<b>Course:</b>').insertBefore('div div');
+            $('div div').after('- Course');
+            $('<b> - Course</b>').insertAfter('div div');
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <div>C</div>
+    <div>C++</div>
+    <div>HTML + CSS</div>
+    <div>Javascript</div>
+    <div>PHP</div>
+</div>
+</body>
+</html>

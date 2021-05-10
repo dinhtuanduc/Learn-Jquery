@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            // $('.small').css('border','1px solid red');
+            // $('div .small').css('border','1px solid red');
+            // $('.small .xsmall').css('border','1px solid red');
+            //filter - tìm ra class tiếp trong chính nó
+            // $('.big').filter('.small').css('border','1px solid red');
+            //find - tìm ra tất cả các class con
+            $('.big').find('.small').css('border','1px solid red');
+        });
+    </script>
+
+</head>
+<body>
+    <div class="big">
+        <span class="small">Thẻ span</span>
+    </div>
+    <div class="big small">
+        <span class="small">Thẻ span</span>
+    </div>
+    <div class="small">
+        <p class="test">Thẻ p</p>
+    </div>
+    <div class="small">
+        <div class="xsmall">Thẻ div con</div>
+    </div>
+</body>
+</html>

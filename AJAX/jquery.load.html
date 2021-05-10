@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+<!--    <script src="../jquery-3.6.0.js"></script>-->
+    <script>
+        $(document).ready(function () {
+            $('#btn').click(function () {
+                // Cấu trúc
+                // $(selector).load(url,data,function(response,status,xhr));
+
+                //--------- $(selector).load(URL)
+                // $('#result').load("data/load1.html");
+                // $('#result').load("data/load1.html #p1");
+
+                //---------- $(selector).load(URL,data)
+                // var data = {name: "Đinh Văn Đức"};
+                // var url = "data/load1.html?id=19";
+                // $('#result').load(url, data);
+                //-----Phải chuyển file này thành file .php thì ms chạy được
+
+                //----------- $(selector).load(URL,callback)
+                // responseTxt - chứa nội dung kết quả nếu cuộc gọi thành công
+                // statusTxt - chứa trạng thái của cuộc gọi
+                // xhr - chứa đối tượng XMLHttpRequest
+                // $('#result').load("data/load1.html",function (responseTxt, statusTxt, xhr) {
+                //     if(statusTxt == "success")
+                //         alert("External content loaded successfully!");
+                //     if(statusTxt == "error")
+                //         alert("Error: " + xhr.status + ": " + xhr.statusText);
+                // });
+            })
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>$(selector).load(url,data,function(response,status,xhr))</h1>
+    <input type="button" id="btn" value="Click">
+    <div id="result" class="text-danger"></div>
+</div>
+</body>
+</html>

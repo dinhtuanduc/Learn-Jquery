@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="ootstrap/css/bootstrap.min.css">
+    <script src="jquery-3.6.0.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <button class="btn btn-primary" id="button1">Click here</button>
+    </div>
+
+    <script>
+        $('#button1').click(function () {
+            var button = $('#button12')
+            if (button.length > 0){
+                alert('Tìm thấy');
+                button.css('backgroundColor','red');
+            }else{
+                alert('Không tìm thấy');
+            }
+        });
+    </script>
+</body>
+</html>

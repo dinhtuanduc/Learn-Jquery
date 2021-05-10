@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="ootstrap/css/bootstrap.min.css">
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            // var json = {
+            //     'firstname': 'Đức',
+            //     'lastname': 'Đinh',
+            //     'gender': 'Nam',
+            //     'age': 21
+            // };
+            // $('#result').html('First name: ' + json.firstname + '<br>Last name: ' + json.lastname);
+            var json_list = [
+                {
+                    'firstname': 'Đức',
+                    'lastname': 'Đinh',
+                    'gender': 'Nam',
+                    'age': 21
+                },
+                {
+                    'firstname': 'Ninh',
+                    'lastname': 'Đinh',
+                    'gender': 'Nam',
+                    'age': 21
+                }
+            ];
+            var result = '';
+            $.each($(json_list),function (key, value) {
+                result += 'First name: ' + value.firstname + ' - Last name: ' + value.lastname + '<br>';
+            });
+            $('#result').html(result);
+
+            // //Chuyển đổi từ JSON sang string
+            // $('#result').html(JSON.stringify(json_list));
+            // //Chuyển đổi từ string về JSON
+            // var result = $('#result').html();
+            // var obj = JSON.parse(result);
+            // console.log(obj);
+
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <div id="result"></div>
+    <div id="result2"></div>
+</div>
+</body>
+</html>

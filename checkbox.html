@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btnSubmit').click(function () {
+                var chkCourses = $('input[name="courses"]:checked');
+                if (chkCourses.length > 0){
+                    $('#Result').html(chkCourses.length + ' Selected <br>');
+                    chkCourses.each(function () {
+                        $('#Result').append($(this).val() + '<br>');
+                    });
+                }else {
+                    $('#Result').text('Not Selected');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <label>
+        <input type="checkbox" name="courses" value="C">C
+    </label>
+    <label>
+        <input type="checkbox" name="courses" value="C++">C++
+    </label>
+    <label>
+        <input type="checkbox" name="courses" value="Python">Python
+    </label>
+    <label>
+        <input type="checkbox" name="courses2" value="Python">Test
+    </label>
+    <br>
+    <input class="btn btn-primary" type="button" id="btnSubmit" value="Submit">
+    <p id="Result"></p>
+</div>
+</body>
+</html>

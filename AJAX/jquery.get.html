@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script src="../jquery-3.6.0.js"></script>
+    <script>
+    $(document).ready(function () {
+        // $.get(URL,data,function(data,status,xhr),dataType);
+        var url = "data/get1.html";
+        $('#click').click(function () {
+            $.get(url, function(data,status){
+                $("#info").html('<br>' + data + '<br> Status: ' + status);
+            });
+        });
+    });
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>GET - Yêu cầu dữ liệu từ một tài nguyên cụ thể</h1>
+    <h3>$.get(URL,data,function(data,status,xhr),dataType)</h3>
+    <div id="info" class="text-center">Ready...</div>
+    <center>
+        <input class="btn btn-primary" type="button" id="click" value="Click">
+    </center>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            var result = [];
+            //Each() normal
+            $('li').each(function (index, element) {
+                result.push($(element).text());
+            });
+            alert(result);
+
+            //Map()
+            alert($('li').map(function (index, element) {
+                return $(element).text();
+            }).get());
+
+            //Each() thay dấu , ở cuối thành |
+            $('li').each(function (index, element) {
+                result += $(element).text() + '|';
+            });
+            //Xóa bỏ kí tự ở cuối result
+            result = result.substr(0,result.length-1);
+            alert(result);
+
+            //Map() thay dấu , ở cuối thành |
+            //Map sẽ ko thêm ỏ cuối nên ta ko phải xóa bỏ
+            alert($('li').map(function (index, element) {
+                return $(element).text();
+            }).get().join('|'));
+
+
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <ul>
+        <li>C</li>
+        <li>C++</li>
+        <li>HTML + CSS</li>
+        <li>Javascript</li>
+        <li>PHP</li>
+    </ul>
+</div>
+</body>
+</html>

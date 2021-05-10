@@ -1,0 +1,169 @@
+<?php
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script src="../jquery-3.6.0.js"></script>
+    <script src="validate/jquery.validate.js"></script>
+    <style>
+        .error{
+            color: red;
+            font-style: italic;
+        }
+    </style>
+    <script>
+        $(document).ready(function (){
+            $.validator.addMethod("validatePassword", function (value, element) {
+                return this.optional(element) || /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$/i.test(value);
+            }, "Hãy nhập password từ 8 đến 16 ký tự bao gồm chữ hoa, chữ thường và ít nhất một chữ số");
+
+            $.validator.addMethod( "validatePhone", function( phone_number, element ) {
+                phone_number = phone_number.replace( /\s+/g, "" );
+                var regexp = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+                return this.optional( element ) || regexp.test( phone_number );
+            }, "Số điện thoại không hợp lệ" );
+
+            $.validator.addMethod("validateEmail", function (value, element) {
+                var regexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+                return this.optional(element) || regexp.test(value);
+            }, "Định dạng email không hợp lệ");
+
+            $.validator.addMethod("validateName", function (value, element) {
+                var regexp = /^[a-zA-Z!@#\$%\^\&*\)\(+=._-]{2,}$/g;
+                return this.optional(element) || regexp.test(value);
+            }, "Tên nhập không đúng");
+            $.validator.addMethod("validateImage", function (value, element) {
+                var regexp = /\.(gif|jpeg|jpg|png)$/i;
+                return this.optional(element) || regexp.test(value);
+            }, "Định dạng ảnh không hợp lệ");
+
+            $( "#myform" ).validate({
+                rules: {
+                    fullname:{
+                        required: true,
+                        validateName:true
+                    },
+                    number:{
+                        required: true,
+                        number: true,
+                        validatePhone: true
+                    },
+                    email:{
+                        required: true,
+                        validateEmail: true
+                    },
+                    password:{
+                        required: true,
+                        validatePassword: true
+                    },
+                    password_again:{
+                        required: true,
+                        equalTo: "#password"
+                    },
+                    image:{
+                        required: true,
+                        validateImage: true
+                    }
+                },
+                messages:{
+                    fullname:{
+                        required: 'Vui lòng nhập',
+                    },
+                    number:{
+                        required: 'Vui lòng nhập',
+                        number: 'Phải nhập kiểu số'
+                    },
+                    email:{
+                        required: "Vui lòng nhập"
+                    },
+                    password:{
+                        required: 'Vui lòng nhập'
+                    },
+                    password_again: {
+                        required: 'Vui lòng nhập',
+                        equalTo: 'Mật khẩu không khớp'
+                    },
+                    image:{
+                        required: 'Vui lòng nhập',
+                    }
+                }
+            });
+
+            $('#submit').click(function () {
+                $('#submit').querySelector()
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container-fluid">
+    <form method="post" id="myform" onsubmit="return false" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="fullname">Họ tên:</label>
+            <input type="text" class="form-control" name="fullname" id="fullname">
+        </div>
+        <div class="form-group">
+            <label for="gender">giới tính:</label>
+            <div class="form-check">
+                <input type="radio" id="gender" value="1" class="form-check-input">
+                <label for="gender">Nam</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="gender" value="2" class="form-check-input">
+                <label for="gender">Nữ</label>
+            </div>
+            <div style="color: red;font-style: italic" id="error_gender"></div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="birthday">Ngày sinh:</label>
+            <input type="date" class="form-control" name="birthday" id="birthday">
+            <div style="color: red;font-style: italic" id="error_birthday"></div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="birthday">Ảnh:</label>
+            <input type="file" class="form-control" name="image" id="image">
+            <div style="color: red;font-style: italic" id="error_image"></div>
+        </div>
+        <br>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" name="email" id="email">
+            <div style="color: red;font-style: italic" id="error_email"></div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="password">Mật khẩu:</label>
+            <input type="password" class="form-control" name="password" id="password">
+            <div style="color: red;font-style: italic" id="error_email"></div>
+        </div>
+        <div class="form-group">
+            <label for="password_again">Nhập lại mật khẩu:</label>
+            <input type="password" class="form-control" name="password_again" id="password_again">
+            <div style="color: red;font-style: italic" id="error_email"></div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="number">Số điện thoại:</label>
+            <input type="text" class="form-control" name="number" id="number">
+            <div style="color: red;font-style: italic" id="error_number"></div>
+        </div>
+        <br>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="click">
+            <label class="form-check-label" for="click">
+                Chấp nhận tất cả điều khoản dịch vụ
+            </label>
+            <div style="color: red;font-style: italic" id="error_click"></div>
+        </div>
+        <br>
+        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>

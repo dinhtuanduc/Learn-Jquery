@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        // Là thêm mới một nội dung nào đó vào cuối của nội dung mỗi element thỏa mãn selector
+        $(document).ready(function () {
+            $('div div').append('');
+            $('<b>  - Course </b>').appendTo('div div');
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <div>C</div>
+    <div>C++</div>
+    <div>HTML + CSS</div>
+    <div>Javascript</div>
+    <div>PHP</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script src="../jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            // $(selector).post(URL,data,function(data,status,xhr),dataType);
+            $('#click').click(function () {
+                $.post("data/post1.asp",
+                    {
+                        name: "Dinh Van Duc",
+                        city: "Nam Định"
+                    },
+                    function (data, status) {
+                        alert("Data: " + data + "\nStatus: " + status);
+                    });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>Các $.post()phương pháp yêu cầu dữ liệu từ máy chủ sử dụng một yêu cầu HTTP POST.</h1>
+    <h3>$(selector).post(URL,data,function(data,status,xhr),dataType)</h3>
+    <div id="info" class="text-center">Ready...</div>
+    <center>
+        <input class="btn btn-primary" type="button" id="click" value="Click">
+    </center>
+</div>
+</body>
+</html>

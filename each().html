@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('li').each(function (key, value) {
+                alert($(value).text());
+                if ($(value).text() == 'Thailand'){
+                    return false;
+                }
+                $(value).css('color','red');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li>Vietnam</li>
+            <li>US</li>
+            <li>Russia</li>
+            <li>Thailand</li>
+            <li>Brazil</li>
+            <li>Spain</li>
+        </ul>
+    </div>
+</body>
+</html>

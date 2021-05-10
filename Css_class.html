@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="jquery-3.6.0.js"></script>
+    <style>
+        .color{
+            text-transform: uppercase;
+            color: red;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#btnAddClass').click(function () {
+               $('h1').addClass('color') ;
+            });
+            $('#btnRemoveClass').click(function () {
+               $('h1').removeClass('color') ;
+            });
+            $('#btnToggleClass').click(function () {
+               $('h1').toggleClass('color') ;
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>Đinh Văn Đức</h1>
+    <br>
+    <button id="btnAddClass" type="button">Add Class</button>
+    <button id="btnRemoveClass" type="button">Remove Class</button>
+    <button id="btnToggleClass" type="button">Toggle Class</button>
+</div>
+</body>
+</html>
